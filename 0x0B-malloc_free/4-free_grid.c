@@ -2,7 +2,7 @@
 #include <stdlib.h>
 /**
  * free_grid - free the grid
- * @grid: grid of memories
+ * @grid: grid of the previous 2D array
  * @height: int
  * Return: void
  */

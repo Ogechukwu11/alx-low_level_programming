@@ -9,42 +9,44 @@
 
 void print_all(const char * const format, ...)
 {
-	int i;
+	int i = 0;
+	char *str;
 	va_list myarg;
 
 	va_start(myarg, format);
 
-	i = 0;
-	while (format[i] != '\0')
+	if (format)
 	{
-		if (format[i] == 'c')
-		{
-			int a = va_arg(myarg, int);
+	while (format[i])
+	{
+	switch (format[i])
+	{
+	case 'c':
+		printf("%c, ", va_arg(myarg, int));
+		break;
 
-			printf("%c, ", a);
-		}
-		else if (format[i] == 'i')
-		{
-			int j = va_arg(myarg, int);
+	case 'i':
+		printf("%d, ", va_arg(myarg, int));
+		break;
 
-			printf("%d, ", j);
-		}
-		else if (format[i] == 'f')
-		{
-			double b = va_arg(myarg, double);
+	case 'f':
+		printf("%f, ", va_arg(myarg, double));
+		break;
 
-			printf("%f, ", b);
-		}
-		else if (format[i] == 's')
-		{
-			char *str = va_arg(myarg, char *);
-
-			if (str == NULL)
-				printf("nil");
-			else
-				printf("%s", str);
-		}
+	case 's':
+		str = va_arg(myarg, char *);
+		if (str == NULL)
+			printf("(nil)");
+		else
+			printf("%s", str);
+		break;
+	default:
 		i++;
+		continue;
+	}
+	i++;
 	}
 	printf("\n");
+	}
+	va_end(myarg);
 }

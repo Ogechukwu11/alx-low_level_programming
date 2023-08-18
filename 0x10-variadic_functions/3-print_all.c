@@ -37,9 +37,12 @@ void print_all(const char * const format, ...)
 					str = "(nil)";
 				printf("%s%s", sp, str);
 				break;
+			default:
+				i++;
+				continue;
 		}
-		i++;
 		sp = ", ";
+		i++;
 	}
 	printf("\n");
 	va_end(myarg);

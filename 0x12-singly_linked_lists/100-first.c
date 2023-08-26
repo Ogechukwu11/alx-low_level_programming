@@ -1,14 +1,12 @@
 #include "lists.h"
 /**
- * main_100 - To print a string.
+ * print_100 - To print a string.
  *
  * Return: void
  */
 
-void main_100(void)
+void print_100(void)
 {
-	char *t;
-
-	t = "You're beat! and yet, you must allow,\nI bore my house upon my back!\n";
-	printf("%s", t);
+	printf("You're beat! and yet, you must allow,\n");
+	printf("I bore my house upon my back!\n");
 }

@@ -9,7 +9,7 @@
 void check_elf(unsigned char *e_ident)
 {
 	int index;
-	
+
 	for (index = 0; index < 4; index++)
 	{
 		if (e_ident[index] != 127 &&

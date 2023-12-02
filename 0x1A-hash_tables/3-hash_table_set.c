@@ -35,7 +35,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	key_value->key = duplicate_key;
 	key_value->value = duplicate_value;
-	key_value->next = NULL;
+
 	if (ht->array[index] == NULL)
 		ht->array[index] = key_value;
 	else

@@ -10,9 +10,6 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $^ -o $@ $(CFLAGS)
 
-%.o: %.c
-	$(CC) -c $< -o $@ $(CFLAGS)
-
 clean:
 	$(RM) *~ $(NAME)
 

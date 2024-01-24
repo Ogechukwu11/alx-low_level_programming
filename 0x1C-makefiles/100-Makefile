@@ -22,8 +22,3 @@ fclean: clean oclean
 re: fclean all
 
 .PHONY: all clean oclean fclean re
-
-ifeq
-(,$(wildcard m.h))
-$(error "m.h not found in the current directory.")
-endif
